@@ -7,9 +7,27 @@
   justify-content: center;
   align-items: center;
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  float: left;
+  margin-right: 30px;
 }
 
 .memory-card > .icon{
   width: 100px;
   height: 100px;
+  position: absolute;
+}
+
+.memory-card.-front{
+  background-color: #fff;
+  margin-left: 16px;
+}
+
+
+.memory-card.-front::before{
+  content: "";
+  width: 100px; 
+  height: 100px;
+  background-color: #d4d4d4;
+  border-radius: 50%;
+  margin-top: 23px;
 }
