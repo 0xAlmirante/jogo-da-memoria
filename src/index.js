@@ -1,6 +1,6 @@
 const $root = document.querySelector("#root");
 const $memoryCard = document.createElement("article");
-const $icon = `
+const $iconCollab = `
   <img 
     src='img/icon-collabcode.svg'
     alt='Mascote CollabCode'
@@ -10,15 +10,13 @@ const $icon = `
 
 $memoryCard.classList.add("memory-card");
 
-
 $root.insertBefore($memoryCard, null);
 
-$memoryCard.insertAdjacentHTML("afterbegin", $icon);
-
+$memoryCard.insertAdjacentHTML("afterbegin", $iconCollab);
 
 // Parte frontal do card
 const $memoryCardFront = document.createElement("article");
-const $iconFront = `
+const $iconJS = `
   <img
     src="img/icon-js.png"
     alt="icon-js"
@@ -29,4 +27,4 @@ $memoryCardFront.classList.add("memory-card", "-front");
 
 $root.insertBefore($memoryCardFront, $memoryCard);
 
-$memoryCardFront.insertAdjacentHTML("afterbegin", $iconFront);
+$memoryCardFront.insertAdjacentHTML("afterbegin", $iconJS);
