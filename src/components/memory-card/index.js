@@ -28,3 +28,9 @@ function createCardFront(){
   $wrapCards.insertBefore($memoryCardFront, null);
   $memoryCardFront.insertAdjacentHTML("afterbegin", $iconJS);
 }
+
+function handleCards($card) {
+  $card.addEventListener("click", () => {
+    console.log("clickado");
+  });
+}
