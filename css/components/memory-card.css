@@ -1,6 +1,6 @@
 .memory-card{
-  width: 155px;
-  height: 155px;
+  width: 160px;
+  height: 160px;
   background-color: #f25a70;
   border-radius: 30px;
   display: flex;
@@ -8,12 +8,10 @@
   align-items: center;
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
   float: left;
-  margin-right: 30px;
 }
 
 .memory-card.-front{
   background-color: #fff;
-  margin-left: 16px;
 }
 
 .memory-card > .icon{
@@ -32,4 +30,10 @@
   height: 95px;
   background-color: #d4d4d4;
   border-radius: 50%;
+}
+
+@media (max-width: 375px){
+  .memory-card{
+    margin: 16px 0px 0px 16px;
+  }
 }
