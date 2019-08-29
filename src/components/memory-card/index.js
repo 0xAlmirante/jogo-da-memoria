@@ -1,36 +1,30 @@
 function createCard(){
-  const $memoryCard = document.createElement("article");
-  const $iconCollab = `
-    <img 
-      src='img/icon-collabcode.svg'
-      alt='Mascote CollabCode'
-      class='icon'
-    />
+  const $memoryCard = `
+    <article class="memory-card" onClick="handleClick()">
+      <img
+        src="img/icon-collabcode.svg"
+        alt="icon-js"
+        class="icon"
+      />
+    </article>
   `;
-  
-  $memoryCard.classList.add("memory-card");
-  $wrapCards.insertBefore($memoryCard, null);
-  
-  $memoryCard.insertAdjacentHTML("afterbegin", $iconCollab);
+
+  return $memoryCard;
 }
 
 function createCardFront(){
-  const $memoryCardFront = document.createElement("article");
-  const $iconJS = `
-    <img
-      src="img/icon-js.png"
-      alt="icon-js"
-      class="icon"
-    />
+  const $memoryCard = `
+    <article class="memory-card -front" onClick="handleClick()">
+      <img
+        src="img/icon-js.png"
+        alt="icon-js"
+        class="icon"
+      />
+    </article>
   `;
-  
-  $memoryCardFront.classList.add("memory-card", "-front");
-  $wrapCards.insertBefore($memoryCardFront, null);
-  $memoryCardFront.insertAdjacentHTML("afterbegin", $iconJS);
+  return $memoryCard;
 }
 
-function handleCards($card) {
-  $card.addEventListener("click", () => {
-    console.log("clickado");
-  });
+function handleClick(){
+  console.log("Ae");
 }

@@ -1,9 +1,18 @@
-const maxCards = 9;
-const $card = document.querySelectorAll(".memory-card");
+const $root = document.querySelector("#root");
 
-createCardFront();
-for(let i = 0; i < maxCards; i++){
-  createCard();
-}
+const $cardsWrapper = createCardsWrapper();
+const $memoryCard = createCard();
+const $memoryCardFront = createCardFront();
 
-$card.forEach(handleCards);
+
+$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardFront);
+$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardFront);
+$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCard);
+$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCard);
+$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCard);
+$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCard);
+$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCard);
+$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCard);
+$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCard);
+$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCard);
+$root.insertAdjacentElement("beforeend", $cardsWrapper);
