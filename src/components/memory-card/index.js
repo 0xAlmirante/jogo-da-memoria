@@ -1,32 +1,11 @@
-let cardClass = "";
+const createCard = (cardClass, src, alt) => `
+  <article class="memory-card ${cardClass}" onClick="handleClick()">
+    <img
+      src="${src}"
+      alt="${alt}"
+      class="icon"
+    />
+  </article>
+`;
 
-const createCard = cardClass => {
-  if(cardClass == "memory-card"){
-    const $memoryCard = `
-      <article class="${cardClass}" onClick="handleClick()">
-        <img
-          src="img/icon-collabcode.svg"
-          alt="icon-js"
-          class="icon"
-        />
-      </article>
-    `;
-
-    return $memoryCard;
-  } else {
-    const $memoryCard = `
-      <article class="${cardClass}" onClick="handleClick()">
-        <img
-          src="img/icon-js.png"
-          alt="icon-js"
-          class="icon"
-        />
-      </article>
-    `;
-    return $memoryCard;
-  }
-}
-
-function handleClick(){
-  console.log("Ae");
-}
+const  handleClick = () => console.log("Ae");
