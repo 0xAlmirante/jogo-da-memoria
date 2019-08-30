@@ -1,28 +1,30 @@
-function createCard(){
-  const $memoryCard = `
-    <article class="memory-card" onClick="handleClick()">
-      <img
-        src="img/icon-collabcode.svg"
-        alt="icon-js"
-        class="icon"
-      />
-    </article>
-  `;
+let cardClass = "";
 
-  return $memoryCard;
-}
+const createCard = cardClass => {
+  if(cardClass == "memory-card"){
+    const $memoryCard = `
+      <article class="${cardClass}" onClick="handleClick()">
+        <img
+          src="img/icon-collabcode.svg"
+          alt="icon-js"
+          class="icon"
+        />
+      </article>
+    `;
 
-function createCardFront(){
-  const $memoryCard = `
-    <article class="memory-card -front" onClick="handleClick()">
-      <img
-        src="img/icon-js.png"
-        alt="icon-js"
-        class="icon"
-      />
-    </article>
-  `;
-  return $memoryCard;
+    return $memoryCard;
+  } else {
+    const $memoryCard = `
+      <article class="${cardClass}" onClick="handleClick()">
+        <img
+          src="img/icon-js.png"
+          alt="icon-js"
+          class="icon"
+        />
+      </article>
+    `;
+    return $memoryCard;
+  }
 }
 
 function handleClick(){
