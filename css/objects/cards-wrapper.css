@@ -1,9 +1,0 @@
-.cards-wrapper{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-
-.cards-wrapper > .memory-card{
-  margin-top: 15px;
-}
