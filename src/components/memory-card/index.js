@@ -55,4 +55,10 @@ const memoryCard = () => {
     </article>
   `;
 }
-const  handleClick = () => console.log("ae")
+
+const  handleClick = ($card) => {
+  const $img = $card.children;
+  $card.classList.toggle("-front");
+  $img[0].setAttribute("src", "img/icon-collabcode.svg");
+}
+
