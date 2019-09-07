@@ -1,16 +1,5 @@
-const createCard = ({cardClass ,src, alt}) => `
-  <article class="memory-card ${cardClass}" onClick="handleClick()">
-    <img
-      src="${src}"
-      alt="${alt}"
-      class="icon"
-    />
-  </article>
-`;
+const memoryCard = () => {
 
-const  handleClick = () => console.log("Ae");
-
-window.onload = () => {
   const $head =  document.querySelector("head");
   const $style = document.createElement("style");
   
@@ -54,4 +43,16 @@ window.onload = () => {
     }
   `
   $head.insertBefore($style, null);
+  
+  return ({cardClass ,src, alt}) => 
+  `
+    <article class="memory-card ${cardClass}" onClick="handleClick(this)">
+    <img
+      src="${src}"
+      alt="${alt}"
+      class="icon"
+    />
+    </article>
+  `;
 }
+const  handleClick = () => console.log("ae")

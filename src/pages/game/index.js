@@ -2,7 +2,9 @@ const $root = document.querySelector("#root");
 
 const $cardsWrapper = createCardsWrapper();
 
-const $memoryCard = createCard(
+const createMemoryCard = memoryCard();
+
+const $memoryCard = createMemoryCard(
   {
     cardClass: "",
     src: "img/icon-collabcode.svg",
@@ -10,7 +12,7 @@ const $memoryCard = createCard(
   }
 );
 
-const $memoryCardJS = createCard(
+const $memoryCardJS = createMemoryCard(
   {
     cardClass: "-front",
     src: "img/icon-js.png",
@@ -18,7 +20,7 @@ const $memoryCardJS = createCard(
   }
 );
 
-const $memoryCardC = createCard(
+const $memoryCardC = createMemoryCard(
   {
     cardClass: "-front",
     src: "img/icon-c.png",
@@ -26,7 +28,7 @@ const $memoryCardC = createCard(
   }
 );
 
-const $memoryCardPHP = createCard(
+const $memoryCardPHP = createMemoryCard(
   {
     cardClass: "-front",
     src: "img/icon-php.png",
@@ -34,7 +36,7 @@ const $memoryCardPHP = createCard(
   }
 );
 
-const $memoryCardJAVA = createCard(
+const $memoryCardJAVA = createMemoryCard(
   {
     cardClass: "-front",
     src: "img/icon-java.png",
