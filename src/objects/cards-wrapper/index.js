@@ -6,12 +6,13 @@ function createCardsWrapper(){
   const $style = document.createElement("style");
   $style.textContent = `
     .cards-wrapper{
+      width: 100vw;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-around;
     }
     
-    .cards-wrapper > .memory-card{
+    .cards-wrapper > div{
       margin-top: 15px;
     }
   `;
