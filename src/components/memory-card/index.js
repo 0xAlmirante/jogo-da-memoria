@@ -84,4 +84,22 @@ const memoryCard = () => {
   `;
 }
 
-const handleClick = $card => $card.classList.toggle("-active");
+let qtd = 0;
+let $firstCard;
+
+const handleClick = $card => {
+  if(qtd === 0){
+    $firstCard = $card;
+  }
+  if(qtd < 2 && !$card.classList.contains("-active")){
+      $card.classList.add("-active");
+      qtd++;
+  }
+  if(qtd === 2){
+    setTimeout(() => {
+      $firstCard.classList.remove("-active");
+      $card.classList.remove("-active");
+      qtd = 0;
+    }, 2000)
+  }
+}
