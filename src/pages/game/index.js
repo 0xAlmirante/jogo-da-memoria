@@ -33,12 +33,12 @@ const $memoryCardJAVA = createMemoryCard(
 );
 
 $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardJS);
-$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardJS);
-$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardC);
-$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardC);
-$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardPHP);
-$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardPHP);
 $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardJAVA);
+$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardC);
+$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardPHP);
+$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardC);
+$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardJS);
+$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardPHP);
 $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardJAVA);
 
 $root.insertAdjacentElement("beforeend", $cardsWrapper);

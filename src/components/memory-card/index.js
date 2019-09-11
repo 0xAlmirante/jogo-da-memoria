@@ -84,22 +84,17 @@ const memoryCard = () => {
   `;
 }
 
-let qtd = 0;
-let $firstCard;
-
 const handleClick = $card => {
-  if(qtd === 0){
-    $firstCard = $card;
+  if(qtdActive < 2){
+    $card.classList.add("-active");
   }
-  if(qtd < 2 && !$card.classList.contains("-active")){
-      $card.classList.add("-active");
-      qtd++;
-  }
-  if(qtd === 2){
+  if(qtdActive === 1){
     setTimeout(() => {
-      $firstCard.classList.remove("-active");
-      $card.classList.remove("-active");
-      qtd = 0;
-    }, 2000)
+      const $activeCards = document.querySelectorAll(".memory-card.-active");
+      $activeCards.forEach(($memoryCard) => {
+        $memoryCard.classList.remove("-active");
+      });
+      qtdActive = 0;
+    }, 2000);
   }
 }
