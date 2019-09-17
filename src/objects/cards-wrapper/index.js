@@ -21,7 +21,7 @@ function createCardsWrapper(){
   
   $head.insertBefore($style, null);
 
-  $cardsWrapper.addEventListener("click", event => qtdActive = $cardsWrapper.querySelectorAll(".memory-card.-active").length);
+  $cardsWrapper.addEventListener("click", () => qtdActive = $cardsWrapper.querySelectorAll(".memory-card.-active").length);
   
   return $cardsWrapper;
 }

@@ -1,3 +1,4 @@
+let pontos = 0;
 const memoryCard = () => {
 
   const $head =  document.querySelector("head");
@@ -26,11 +27,13 @@ const memoryCard = () => {
       position: absolute;
     }
 
-    .memory-card.-active .card{
+    .memory-card.-active .card,
+    .memory-card.-hit .card{
       display: none;
     }
 
-    .memory-card.-active .card.-front{
+    .memory-card.-active .card.-front,
+    .memory-card.-hit .card.-front {
       display: flex;
     }
   
@@ -84,17 +87,33 @@ const memoryCard = () => {
   `;
 }
 
+
+
 const handleClick = $card => {
   if(qtdActive < 2){
     $card.classList.add("-active");
   }
+
   if(qtdActive === 1){
-    setTimeout(() => {
-      const $activeCards = document.querySelectorAll(".memory-card.-active");
-      $activeCards.forEach(($memoryCard) => {
+    const $memoryCards = document.querySelectorAll(".memory-card.-active");
+
+    if($memoryCards[0].querySelector(".-front .icon").getAttribute("src") === $memoryCards[1].querySelector(".-front .icon").getAttribute("src")){
+      pontos++;
+      $memoryCards.forEach(($memoryCard) => {
+        $memoryCard.classList.add("-hit");
         $memoryCard.classList.remove("-active");
       });
-      qtdActive = 0;
-    }, 2000);
+      console.log("Pontos:", pontos);
+    } else {
+      setTimeout(() => {
+        const $activeCards = document.querySelectorAll(".memory-card.-active");
+
+        $activeCards.forEach(($memoryCard) => {
+          $memoryCard.classList.remove("-active");
+        });
+        qtdActive = 0;
+      }, 2000);
+
+    }
   }
 }
