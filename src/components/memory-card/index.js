@@ -1,4 +1,3 @@
-let pontos = 0;
 const memoryCard = () => {
 
   const $head =  document.querySelector("head");
@@ -28,12 +27,12 @@ const memoryCard = () => {
     }
 
     .memory-card.-active .card,
-    .memory-card.-hit .card{
+    .memory-card.-score .card{
       display: none;
     }
 
     .memory-card.-active .card.-front,
-    .memory-card.-hit .card.-front {
+    .memory-card.-score .card.-front {
       display: flex;
     }
   
@@ -90,30 +89,34 @@ const memoryCard = () => {
 
 
 const handleClick = $card => {
+  turnCard($card);
+  validateGoal();
+}
+
+function turnCard($card) {
   if(qtdActive < 2){
     $card.classList.add("-active");
   }
+}
 
+function validateGoal(){
   if(qtdActive === 1){
-    const $memoryCards = document.querySelectorAll(".memory-card.-active");
+    const $activeCards = document.querySelectorAll(".memory-card.-active");
 
-    if($memoryCards[0].querySelector(".-front .icon").getAttribute("src") === $memoryCards[1].querySelector(".-front .icon").getAttribute("src")){
-      pontos++;
-      $memoryCards.forEach(($memoryCard) => {
-        $memoryCard.classList.add("-hit");
+    if($activeCards[0].querySelector(".-front .icon").getAttribute("src") === $activeCards[1].querySelector(".-front .icon").getAttribute("src")){
+      score++;
+      $activeCards.forEach(($memoryCard) => {
+        $memoryCard.classList.add("-score");
         $memoryCard.classList.remove("-active");
       });
-      console.log("Pontos:", pontos);
+      console.log("score:", score);
     } else {
       setTimeout(() => {
-        const $activeCards = document.querySelectorAll(".memory-card.-active");
-
         $activeCards.forEach(($memoryCard) => {
           $memoryCard.classList.remove("-active");
         });
         qtdActive = 0;
       }, 2000);
-
     }
   }
 }
