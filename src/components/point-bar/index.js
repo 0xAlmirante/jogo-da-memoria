@@ -21,13 +21,12 @@ const pointBar =  (function () {
 
     $head.insertBefore($style, null);
   };
-
   module.create = () => {
     module._style();
     return `
         <header class="point-bar">
           <span class="number">
-            1
+            ${store.score}
           </span>
         </header>
       `
