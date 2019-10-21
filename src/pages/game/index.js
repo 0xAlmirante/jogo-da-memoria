@@ -2,6 +2,7 @@
   const $root = document.querySelector("#root");
 
   const $cardsWrapper = createCardsWrapper();
+  const $lockLayer = createLayer();
   const createMemoryCard = memoryCard.create();
 
   const $pointBar = pointBar.create();
@@ -43,6 +44,7 @@
 
   $root.insertAdjacentHTML("afterbegin", $pointBar);
   $root.insertAdjacentHTML("afterend", $gameButton);
+  $root.insertAdjacentElement("beforeend", $lockLayer);
   $root.insertAdjacentElement("beforeend", $cardsWrapper);
 
 })();
