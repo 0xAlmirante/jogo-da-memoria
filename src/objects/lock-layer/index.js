@@ -1,27 +1,31 @@
-function createLayer(){
-  const $layer = document.createElement("div");
+const createLayer = (function() {
+  const module = {};
 
-  $layer.classList.add("lock-layer");
+  module._style = () => {
+    const $head = document.querySelector("head");
+    const $style = document.createElement("style");
+    $style.textContent = `
+      .lock-layer{
+        background-color: rgba(58, 64, 66, .5);
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        z-index: 1;
+        transition: height 1s ease-in-out;
+      }
+    `;
+    $head.insertBefore($style, null);
+  };
 
-  const $head = document.querySelector("head");
-  const $style = document.createElement("style");
-  $style.textContent = `
-    .lock-layer{
-      background-color: #3a4042;
-      width: 100vw;
-      height: 100vh;
-      opacity: 0.7;
-      position: absolute;
-      z-index: 1;
-      transition: height 1s ease-in-out;
-    }
+  module.render = () => {
+    module._style();
+    return `
+      <div class="lock-layer"></div>
+    `;
+  };
 
-    .lock-layer.-off{
-      height: 0;
-    }
-  `;
-
-  $head.insertBefore($style, null);
-
-  return $layer;
-}
+  return {
+    render: module.render
+  };
+})();

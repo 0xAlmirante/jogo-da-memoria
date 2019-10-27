@@ -30,18 +30,11 @@ const gameButton = (function(){
 
     $head.insertBefore($style, null);
   };
-  
-  module.handleClick = ($button) => {
-    const $lockLayer = document.querySelector(".lock-layer");
-    
-    $button.classList.toggle("-off");
-    $lockLayer.classList.toggle("-off");
-  };
 
-  module.render  = () => {
+  module.render = content => {
     module._style();
     return `
-      <button class="game-button" onClick="gameButton.handleClick(this)"> Start </button>
+      <button class="game-button"> ${content} </button>
     `;
   };
 
