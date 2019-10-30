@@ -12,7 +12,7 @@ const createLayer = (function() {
         position: absolute;
         top: 0;
         z-index: 1;
-        transition: opacity 300ms 200ms linear;
+        transition: opacity 300ms 300ms linear;
       }
 
       .lock-layer.-disable{
