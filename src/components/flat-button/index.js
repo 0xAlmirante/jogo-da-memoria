@@ -11,18 +11,23 @@ const flatButton = (function () {
         color: #fffcee;
         font-size: 24px;
         font-weight: bold;
-        width: 186px;
+        width: 50vw;
         height: 176px;
         text-transform: uppercase;
+        cursor: pointer;
+      }
+
+      .flat-button.-signup{
+        background-color: #f25a70;
       }
     `;
 
     $head.insertBefore($style, null);
   };
 
-  module.render = () => {
+  module.render = (content, variation) => {
     module._style();
-    return `<button class="flat-button"> Log in </button>`;
+    return `<button class="flat-button ${variation}"> ${content} </button>`;
   }
 
   return {
