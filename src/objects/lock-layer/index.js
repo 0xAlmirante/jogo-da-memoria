@@ -12,8 +12,13 @@ const createLayer = (function() {
         position: absolute;
         top: 0;
         z-index: 1;
-        transition: height 1s ease-in-out;
+        transition: opacity 300ms 200ms linear;
       }
+
+      .lock-layer.-disable{
+        opacity: 0;
+      }
+
     `;
     $head.insertBefore($style, null);
   };
