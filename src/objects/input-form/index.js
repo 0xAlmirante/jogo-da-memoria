@@ -9,15 +9,13 @@ const inputForm = (function() {
     $style.textContent = `
       .input-form{
         display: block;
-        width: 340px;
-        border: none;
+        width: 100%;
         border-bottom: 1px rgba(58, 64, 66, 0.5) solid;
-        margin-top: 12px;
-        margin-left: 35px;
-        margin-right: 35px;
-        padding-bottom: 12px;
         color: #3a4042;
         font-size: 18px;
+        font-weight: bold;
+        padding-bottom: 12px;
+        padding-top: 12px;
       }
 
       .input-form::placeholder{

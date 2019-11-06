@@ -10,7 +10,6 @@ const labelForm = (function() {
         font-size: 16px;
         color: #3a4042;
         opacity: 0.5;
-        margin-left: 35px;
       }
     `;
 
