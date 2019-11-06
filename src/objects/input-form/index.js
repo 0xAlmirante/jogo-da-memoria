@@ -27,10 +27,10 @@ const inputForm = (function() {
     $head.insertBefore($style, null);
   };
 
-  module.render = content => {
+  module.render = (content, placeholder = "") => {
     module._style();
     return `
-      <input type="${content}" class="input-form" placeholder="example@email.com"></input>
+      <input type="${content}" class="input-form" placeholder="${placeholder}"></input>
     `;
   };
 
