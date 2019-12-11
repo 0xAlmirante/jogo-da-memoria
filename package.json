@@ -1,0 +1,23 @@
+{
+  "name": "jogo-da-memoria",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "yup": "^0.27.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thiagosduda/jogo-da-memoria.git"
+  },
+  "author": "Thiago Duda",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thiagosduda/jogo-da-memoria/issues"
+  },
+  "homepage": "https://github.com/thiagosduda/jogo-da-memoria#readme"
+}

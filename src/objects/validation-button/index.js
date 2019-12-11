@@ -7,13 +7,19 @@ const validationButton = (function() {
 
     $style.textContent = `
       .validation-button{
-        width: 300px;
+        width: 100%;
         height: 48px;
         border-radius: 24px;
         background-color: #f25a70;
         color: #fff;
-        font-size: 18px;
+        font-size: 14px;
         font-weight: bold;
+        text-transform: uppercase;
+        cursor: pointer;
+      }
+
+      .input-form + .validation-button{
+        margin-top: 45px;
       }
     `;
 
@@ -22,7 +28,7 @@ const validationButton = (function() {
 
   module.render = content => {
     module._style();
-    return `<button class="validation-button"> ${content} </button>`
+    return `<input type="submit" value="${content}" class="validation-button">`
   };
 
   return {
