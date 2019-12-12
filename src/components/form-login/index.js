@@ -18,10 +18,22 @@ const formLogin = (function() {
     const $labelUsername = labelForm.render("Username ou e-mail");
     const $labelPassword = labelForm.render("Password");
 
-    const $userInput = inputForm.render("text", "example@email.com");
-    const $passwordInput = inputForm.render("password", "Your password");
+    const $userInput = inputForm.render({
+      type: "text",
+      placeholder: "example@email.com"
+    });
+
+    const $passwordInput = inputForm.render({
+      type: "password",
+      placeholder: "Your password"
+    });
+    
     const $submitButton = validationButton.render("Login");
-    const $forgetPassword = actionLink.render("Forget Password?");
+
+    const $forgetPassword = actionLink.render({
+      href: "#",
+      content: "Forget Password?"
+    });
 
     return `
       ${$labelUsername}

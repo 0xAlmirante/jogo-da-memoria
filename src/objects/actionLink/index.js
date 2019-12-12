@@ -7,23 +7,23 @@ const actionLink = (function() {
 
     $style.textContent = `
       .action-link{
+        display: block;
         font-size: 14px;
         opacity: 0.73;
         color: #3a4042;
         text-decoration: none;
-        float: right;
         margin-top: 40px;
         margin-bottom: 60px;
-
+        text-align: right;
       }
     `;
 
     $head.insertBefore($style, null);
   };
 
-  module.render = content => {
+  module.render = ({href, content}) => {
     module._style();
-    return `<a href="" class="action-link"> ${content} </a>`;
+    return `<a href="${href}" class="action-link"> ${content} </a>`;
   };
 
   return {

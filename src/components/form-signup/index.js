@@ -20,10 +20,25 @@ const formSignup = (function(){
     const $labelPassword = labelForm.render("Password");
     const $labelPasswordConfirm = labelForm.render("Confirm Password");
 
-    const $userInput = inputForm.render("text", "Name-example");
-    const $emailInput = inputForm.render("email", "example@email.com");
-    const $passwordInput = inputForm.render("password", "Your password");
-    const $confirmPasswordInput = inputForm.render("password", "Confirm your password");
+    const $userInput = inputForm.render({
+      type: "text",
+      placeholder: "Name-example"
+    });
+
+    const $emailInput = inputForm.render({
+      type: "email",
+      placeholder: "example@email.com"
+    });
+
+    const $passwordInput = inputForm.render({
+      type: "password",
+      placeholder: "Your password"
+    });
+    
+    const $confirmPasswordInput = inputForm.render({
+      type: "password",
+      placeholder: "Confirm your password"
+    });
 
     const $submitButton = validationButton.render("Submit");
 
