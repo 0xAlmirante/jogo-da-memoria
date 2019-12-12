@@ -17,11 +17,6 @@ const inputForm = (function() {
         padding-bottom: 12px;
         padding-top: 12px;
       }
-
-      .input-form::placeholder{
-        opacity: 1;
-        font-size: 18px;
-      }
     `;
 
     $head.insertBefore($style, null);
