@@ -18,7 +18,7 @@ const labelForm = (function() {
       }
       
     `;
-
+    
     $head.insertBefore($style, null);
   };
 
