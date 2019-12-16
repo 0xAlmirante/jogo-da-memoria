@@ -22,11 +22,16 @@ const inputForm = (function() {
     $head.insertBefore($style, null);
   };
 
-  module.render = ({ placeholder = "", type= "" }) => {
+  module.render = ({ id = "", placeholder = "", type= "" }) => {
     module._style();
 
     return `
-      <input type="${type}" class="input-form" placeholder="${placeholder}"></input>
+      <input 
+        id="${id}"
+        type="${type}"
+        class="input-form"
+        placeholder="${placeholder}">
+      </input>
     `;
   };
 

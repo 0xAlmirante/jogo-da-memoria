@@ -27,13 +27,21 @@ const flatButton = (function () {
     $head.insertBefore($style, null);
   };
 
-  module.render = (content = "", active = false) => {
+  module.handleClick = path => {
+    window.location.hash = `#/${path}`;
+  };
+
+  module.render = (content = "", active = false, path = "") => {
     module._id++;
     module._style(active);
-    return `<button class="flat-button-${module._id}"> ${content} </button>`;
+    return `<button 
+              class="flat-button-${module._id}"
+              onClick="flatButton.handleClick('${path}')"
+              > ${content} </button>`;
   }
 
   return {
-    render: module.render
+    render: module.render,
+    handleClick: module.handleClick
   };
 })();

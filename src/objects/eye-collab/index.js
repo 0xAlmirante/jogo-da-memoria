@@ -7,11 +7,20 @@ const eyeCollab = (function(){
 
     $style.textContent = `
       .eye-collab{
-        width: 23px;
+        background-image: url(/img/eye.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        display: block;
+        text-indent: -999px;
         opacity: 0.3;
+        width: 23px;
+        height: 15px;
         cursor: pointer;
+        transition: opacity 200ms linear;
+        float: right;
+        transform: translateY(-140%);
+        margin-right: 4px;
       }
-
       .eye-collab.-active{
         opacity: 1;
       }
@@ -20,22 +29,28 @@ const eyeCollab = (function(){
     $head.insertBefore($style, null);
   };
 
-  module.handleClick = $eye => {
-    const $input = document.querySelectorAll(".input-form");
-    $eye.classList.toggle("-active");
-    if($eye.classList.contains("-active")){
-      $input[1].type = 'text';
+  module.handleClick = function(){
+    const attrFor = this.getAttribute("for");
+    const $input = document.querySelector(`#${attrFor}`);
+    
+    if($input.getAttribute("type") === "password"){
+      this.classList.remove("-active");
+      $input.setAttribute("type", "text");
     } else {
-      $input[1].type = 'password';
+      this.classList.add("-active");
+      $input.setAttribute("type", "password");
     }
   };
 
-  module.render = () => {
+  module.render = ({attrFor = ""}) => {
     module._style();
     return `
-      <figure class="eye-collab" onClick="eyeCollab.handleClick(this)">
-        <img class="" src="./img/eye.svg">
-      </figure>
+      <label 
+        for="${attrFor}"
+        class="eye-collab"
+        onClick="eyeCollab.handleClick.bind(this)()">
+        Mostrar Senha
+      </label>
     `
   };
 

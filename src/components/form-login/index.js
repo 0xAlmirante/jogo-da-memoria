@@ -24,11 +24,14 @@ const formLogin = (function() {
     });
 
     const $passwordInput = inputForm.render({
+      id: "password",
       type: "password",
       placeholder: "Your password"
     });
+
+    const $eyeCollab = eyeCollab.render({attrFor: "password"});
     
-    const $submitButton = validationButton.render("Login");
+    const $submitButton = validationButton.render({content: "Login", path: "game"});
 
     const $forgetPassword = actionLink.render({
       href: "#",
@@ -40,6 +43,7 @@ const formLogin = (function() {
       ${$userInput}
       ${$labelPassword}
       ${$passwordInput}
+      ${$eyeCollab}
       ${$forgetPassword}
       ${$submitButton}
     `

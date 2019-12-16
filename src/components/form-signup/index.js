@@ -40,7 +40,7 @@ const formSignup = (function(){
       placeholder: "Confirm your password"
     });
 
-    const $submitButton = validationButton.render("Submit");
+    const $submitButton = validationButton.render({content: "Submit", path: "login"});
 
     return `
       ${$labelUsername}

@@ -26,12 +26,23 @@ const validationButton = (function() {
     $head.insertBefore($style, null);
   };
 
-  module.render = content => {
+  module.handleClick = (event, path) => {
+    event.preventDefault();
+
+    window.location.hash = `#/${path}`;
+  };
+
+  module.render = ({content = "", path = ""}) => {
     module._style();
-    return `<input type="submit" value="${content}" class="validation-button">`
+    return `<input type="submit"
+                   value="${content}"
+                   class="validation-button"
+                   onClick="validationButton.handleClick(event, '${path}')"
+            >`
   };
 
   return {
-    render: module.render
+    render: module.render,
+    handleClick: module.handleClick
   }
 })();
