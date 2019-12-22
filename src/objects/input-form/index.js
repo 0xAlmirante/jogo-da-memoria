@@ -17,6 +17,10 @@ const inputForm = (function() {
         padding-bottom: 12px;
         padding-top: 12px;
       }
+
+      .input-form.-invalid{
+        background-color: #f25a70;
+      }
     `;
 
     $head.insertBefore($style, null);

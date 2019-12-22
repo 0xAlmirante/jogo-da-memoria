@@ -19,6 +19,7 @@ const formLogin = (function() {
     const $labelPassword = labelForm.render("Password");
 
     const $userInput = inputForm.render({
+      id: "user",
       type: "text",
       placeholder: "example@email.com"
     });
@@ -48,6 +49,7 @@ const formLogin = (function() {
       ${$submitButton}
     `
   };
+
 
   module.render = () => {
     module._style();
