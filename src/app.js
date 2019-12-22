@@ -7,10 +7,5 @@
   paths["#/game"] = game;
   paths["#/404"] = err404; 
 
-  if(paths[hash] === undefined){
-    paths["#/404"]();
-    return;
-  }
-
-  paths[hash]();
+  paths[hash] ? paths[hash]() : paths["#/404"]();
 })();
